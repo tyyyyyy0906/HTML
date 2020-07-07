@@ -1,0 +1,175 @@
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+.live {
+    overflow: hidden;
+}
+
+.live > li {
+    list-style: none;
+    position: relative;
+    padding: 0 0 0 2em;
+    margin: 0 0 .5em 10px;
+    -webkit-transition: .12s;
+            transition: .12s;
+}
+
+.live > li::before {
+    position: absolute;
+    content: '\2022';
+    font-family: Arial;
+    color: #fff;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 2.3em;
+    opacity: .5;
+    line-height: .50;
+    -webkit-transition: .5s;
+            transition: .5s;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto Condensed Regular"), local("RobotoCondensed-Regular"), url(http://themes.googleusercontent.com/static/fonts/robotocondensed/v7/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'iconfont';  /* project id 892643 */
+    src: url('//at.alicdn.com/t/font_892643_y5n06yp2zzr.eot');
+    src: url('//at.alicdn.com/t/font_892643_y5n06yp2zzr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_892643_y5n06yp2zzr.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_892643_y5n06yp2zzr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_892643_y5n06yp2zzr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_892643_y5n06yp2zzr.svg#iconfont') format('svg');
+}
+
+.live > li:hover {
+    color: #fff;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font: 1.33em 'Roboto Condensed', arial;
+    color: #FFF;
+    text-align: center;
+    /* background-image: -webkit-radial-gradient(circle, #3c3b52 0%, #252233 80%);
+    background-image: radial-gradient(circle, #3c3b52 0%, #252233 80%); */
+    background-image: url('/img/background.png');
+}
+
+* {
+    -moz-box-sizing: padding-box;
+         box-sizing: padding-box;
+}
+  
+ol, ul {
+    width: 28%;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 1.5em;
+    margin: 0 0 3% 0;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.live > li:hover::before {
+    -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+            transform: scale(2);
+    opacity: 1;
+    text-shadow: 0 0 4px;
+    -webkit-transition: .12s;
+            transition: .12s;
+  }
+
+.type-animtion > li::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    line-height: 0;
+    border-radius: 3em;
+    top: .25em;
+    left: 5px;
+}
+
+.live.type-animtion > li:hover::before {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    border-radius: 5px;
+    width: 25px;
+    left: -10px;
+    background-color: #ba5353;
+}
+
+.type-number {
+    counter-reset: xxx 0;
+}
+
+.live.type-number > li::before {
+    content: counter(xxx, decimal) ".";
+    counter-increment: xxx 1;
+    font-size: 1em;
+    top: .55em;
+    font-family: 'Roboto Condensed';
+    -webkit-transition: .5s;
+            transition: .5s;
+}
+
+.type-number > li:hover::before {
+    -webkit-transition: .12s;
+            transition: .12s;
+}
+
+.live.type-korea > li::before {
+    content: '\e870';
+    font-family: 'iconfont';
+    font-size: 1em;
+    position: absolute;
+    top: .45em;
+    color: #fff;
+    left: 0em;
+}
+
+.type-korea > li:hover::before {
+    color: red;
+    -webkit-transition: .12s;
+       -moz-transition: .12s;
+         -o-transition: .12s;
+            transition: .12s;
+}
