@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 892643 */
+    src: url('//at.alicdn.com/t/font_892643_35hygyk13ec.eot');
+    src: url('//at.alicdn.com/t/font_892643_35hygyk13ec.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_892643_35hygyk13ec.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_892643_35hygyk13ec.woff') format('woff'),
+    url('//at.alicdn.com/t/font_892643_35hygyk13ec.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_892643_35hygyk13ec.svg#iconfont') format('svg');
+}
+
+table {
+    list-style-type: none;
+    border-radius: 10px;
+}
+
+.table-item {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+h1 {
+    margin: 0;
+    opacity: .8;
+}
+
+.browser-container {
+    width: 60%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    display: table;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-spacing: 2px;
+    border-radius: 25px;
+}
+
+.browser-container tr {
+    color: #333333;
+    font-weight: 200;
+    padding: 0;
+    height: 106px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #F5F5F5;
+    border: 1px solid #ddd;
+    opacity: .55;
+    font-size: 1.5em;
+}
+
+.browser-container td {
+    padding: 0;
+    height: 106px;
+    width: 20%;
+    vertical-align: middle;
+    background: #fdfcf8 no-repeat center;
+    /* border: 1px solid #ddd; */
+}
