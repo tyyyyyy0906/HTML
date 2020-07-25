@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单Demo</title>
+
+    <style>
+        * {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            margin: 0;
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: radial-gradient(circle, #3c3b52 0%, #252233 80%);
+            background-size: 100% 100%;
+        }
+
+        #item-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .basic-item {
+            border: 0;
+            padding: 80px;
+            padding-bottom: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(221, 178, 178, 0.4);
+            position: relative;
+        }
+
+        legend {
+            padding: 10px 5px;
+            background-image: radial-gradient(circle, #3c3b52 0%, #252233 80%);
+            box-shadow: 0 0 10px rgba(221, 178, 178, 0.2);
+            border-radius: 5px;
+            color: #eee;
+            position: absolute;
+            left: 25px;
+            top: -20px;
+        }
+
+        label {
+            font-size: 22px;
+            color: #eee;
+            vertical-align: middle;
+        }
+
+        input {
+            display: block;
+            border: 0px;
+            width: 260px;
+            height: 30px;
+            outline-style: none;
+            border: 1px solid #ccc; 
+            border-radius: 3px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            margin: 50px 0;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="item-container">
+        <form action="">
+            <fieldset class="basic-item">
+                <legend>表单事件Demo</legend>
+                <label for="">
+                    邮箱：<input type="email" name="" id="item-email">
+                </label>
+                <label for="">
+                    次数：<input type="text" name="" id="item-number">
+                </label>
+                <input type="submit">
+            </fieldset>
+        </form>
+    </div>
+</body>
+<script>
+    let eitem = document.getElementById("item-email");
+    let nitem = document.getElementById("item-number");
+    let num = 0;
+
+    eitem.addEventListener("input", () => {
+        num++;
+        nitem.value = num;
+    });
+
+    eitem.addEventListener("invalid", () => {
+        console.log("请输入正确邮箱");
+    });
+
+</script>
+</html>

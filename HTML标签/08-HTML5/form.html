@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>表单</title>
+	</head>
+	<body>
+		<!-- <form action="" method="">
+			<fieldset id="">
+				<legend>表单类型</legend>
+				<label for="">
+					email: <input type="email" name="email" required>
+				</label>
+				<br><br>
+				<label for="">
+					color: <input type="color" name="color">
+				</label>
+				<br><br>
+				<label for="">
+					url: <input type="url" name="url">
+				</label>
+				<br><br>
+				<label for="">
+					number: <input type="number" step="3" name="number">
+				</label>
+				<br><br>
+				<label for="">
+					range: <input type="range" name="range" value="100">
+				</label>
+				<br><br>
+				<label for="">
+					search: <input type="search" name="search">
+				</label>
+				<br><br>
+				<label for="">
+					tel: <input type="tel" name="tel">
+				</label>
+				<br><br>
+				<label for="">
+					time: <input type="time" name="time">
+				</label>
+				<br><br>
+				<label for="">
+					date: <input type="date" name="date">
+				</label>
+				<br><br>
+				<label for="">
+					datetime: <input type="datetime">
+				</label>
+				<br><br>
+				<label for="">
+					week: <input type="week" name="month">
+				</label>
+				<br><br>
+				<label for="">
+					month: <input type="month" name="month">
+				</label>
+				<br><br>
+				<label for="">
+					datetime-local: <input type="datetime-local" name="datetime-local">
+				</label>
+				<input type="submit">
+			</fieldset>
+		</form>
+		
+		<form action="" method="">
+			<input type="text" name="" id="" value="" list="itemMode"/>
+			<datalist id="itemMode">
+				<option>Apple</option>
+				<option>Huawei</option>
+				<option>Oppo</option>
+			</datalist>
+		</form> -->
+		
+		<form action="" method="post">
+			<input id="item-input" type="tel" pattern="1\d{10}" />
+		</form>
+	</body>
+	<script>
+
+		window.onload = () => {
+			console.log("当前Page Loader Finished");
+		};
+
+		let item = document.getElementById('item-input');
+		// oninput：用于监听表单的输入事件；
+		item.addEventListener("input", () => {
+			console.log("we have input element from input");					
+		});
+		// oninvalid:验证不通过时触发的事件；
+		item.addEventListener("invalid", () => {
+			console.log("输入的结果不正确哦!!!");
+		});
+
+		item.addEventListener("blur", () => {
+			console.log("当前表单失去焦点");
+		});
+
+		item.addEventListener("contextmenu", () => {
+			console.log("点击了鼠标右键");
+		});
+
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/video.css" />
+        <title>Video</title>
+    </head>
+
+    <body>
+        <div id="video-item">
+            <figure>
+                <figcaption>猪猪播放器</figcaption>
+                <div class="player-item">
+                    <video src="video/fun.mp4"></video>
+                    <!-- video控制条 -->
+                    <div class="control-item">
+                        <!-- 播放暂停icon -->
+                        <a href="#" class="switch icon-play"></a>
+                        <div class="play-progress">
+                            <!-- 进度条 -->
+                            <div class="progress-item">
+                                <div class="handler-item"></div>
+                            </div>
+                        </div>
+                        <!-- 播放时间 -->
+                        <div class="play-time">
+                            <span class="curr-time">00:00:00</span>
+                            /
+                            <span class="total-time">00:00:00</span>
+                        </div>
+                        <!-- 视频全屏 -->
+                        <a href="#" class="video-full extend icon-resize-full"></a>
+                    </div>
+                </div>
+            </figure>
+        </div>
+
+        <script src="js/video.js"></script>
+    </body>
+</html>
