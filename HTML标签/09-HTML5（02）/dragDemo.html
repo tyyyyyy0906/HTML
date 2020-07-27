@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag Demo</title>
+
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            border: 1px solid orange;
+        }
+
+        #container>div,
+        #targetItem>div {
+            width: 98px;
+            height: 98px;
+            border: 1px solid green;
+            border-radius: 50%;
+            background-color: pink;
+            float: left;
+            text-align: center;
+            line-height: 98px;
+        }
+
+        #targetItem {
+            width: 400px;
+            height: 400px;
+            border: 1px solid blue;
+            position: absolute;
+            left: 600px;
+            top: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div draggable="true">1</div>
+        <div draggable="true">2</div>
+        <div draggable="true">3</div>
+        <div draggable="true">4</div>
+        <div draggable="true">5</div>
+        <div draggable="true">6</div>
+        <div draggable="true">7</div>
+        <div draggable="true">8</div>
+        <div draggable="true">9</div>
+    </div>
+    <div id="targetItem"></div>
+</body>
+
+<script>
+    (function (document, window) {
+        let itemGroup = document.querySelectorAll('#container div');
+        let itemTarget = document.querySelector('#targetItem');
+        let temp = null;
+
+        for (let i = 0; i < itemGroup.length; i++) {
+            itemGroup[i].ondragstart = function () {
+                temp = this;
+                console.log("curr item value", temp.innerHTML);
+            }
+
+            itemGroup[i].ondragend = function () {
+                temp = null;
+                console.log("item拖拽结束");
+            }
+        }
+
+        itemTarget.ondragover = function (event) {
+            event.preventDefault();
+            console.log("拖拽覆盖");
+        }
+
+        itemTarget.ondrop = function (event) {
+            event.preventDefault();
+            itemTarget.appendChild(temp);
+        }
+    }(document, window))
+</script>
+
+</html>

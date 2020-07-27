@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5(二)</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0;
+        }
+
+        #itemA {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #itemB {
+            width: 202px;
+            height: 202px;
+            border: 1px solid green;
+            margin: 0 0 0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="itemB" draggable="false"></div>
+    <div id="itemA" draggable="true"></div>
+</body>
+<script>
+    (function (document, window) {
+        let itemA = document.querySelector('#itemA');
+        let itemB = document.querySelector('#itemB');
+        // element 被拖动时触发
+        itemA.ondragstart = () => {
+            console.log("has been drag");
+            itemDrag(event);
+        };
+        // 鼠标离开拖拽元素时被调用
+        itemA.ondragleave = () => {
+            console.log("drag has leave");
+        };
+        // 拖拽结束时调用
+        itemA.ondragend = () => {
+            console.log("current drag has end");
+        };
+        // 实时调用拖拽
+        itemA.ondrag = () => {
+            console.log("drag has be actived");
+        };
+
+        itemB.ondragenter = () => {
+            console.log("拖拽ele进来了");
+        };
+
+        itemB.ondragover = (e) => {
+            e.preventDefault();
+            console.log("元素覆盖");
+        };
+
+        itemB.ondrop = (e) => {
+            e.preventDefault();
+            console.log("拖拽释放");
+            itemDrop(event);
+        };
+
+        function itemDrag(item) {
+            item.dataTransfer.setData("Item", item.target.id);
+        }
+
+        function itemDrop(item) {
+            let data = item.dataTransfer.getData("Item");
+            console.log("get data = ", data);
+            item.target.appendChild(document.getElementById(data));
+        }
+
+    }(document, window))
+</script>
+
+</html>
