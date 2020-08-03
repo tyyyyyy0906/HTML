@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web存储之localStroge</title>
+</head>
+
+<body>
+    用户名：<input id="userName"><br><br>
+    密 码：<input id="passWd"><br><br>
+    <input type="checkbox" name="" id="reminderPass"> 记住密码 <br><br>
+    <input type="button" value="登陆" id="login">
+</body>
+
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function init() {
+        let rPassWd = $('reminderPass');
+        let login_ = $('login');
+        let name = $('userName');
+        let pass = $('passWd');
+
+        (() => {
+            name.value = window.localStorage.getItem('userName');
+            pass.value = window.localStorage.getItem('passWord');
+            rPassWd.checked = window.localStorage.getItem('checkable');
+        })()
+
+        rPassWd.addEventListener('click', (e) => {
+            if (rPassWd.checked) {
+                window.localStorage.setItem('userName', name.value);
+                window.localStorage.setItem('passWord', pass.value);
+                window.localStorage.setItem('checkable', true);
+            } else {
+                // Do Nothing
+            }
+        })
+    }
+
+    window.onload = () => {
+        init();
+    }
+</script>
+
+</html>

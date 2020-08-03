@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web存储</title>
+</head>
+
+<body>
+    Key:<input id="key"><br>
+    Val:<input id="val"><br>
+    <input type="button" id="save" value="Save">
+    <input type="button" id="show" value="Show">
+</body>
+
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function init() {
+        let save = $('save');
+        let show = $('show');
+
+        save.addEventListener('click', saveFun, false);
+        show.addEventListener('click', showFun, false);
+    }
+
+    function saveFun(e) {
+        let key_ = $('key').value;
+        let val_ = $('val').value;
+        sessionStorage.setItem(key_, val_);
+        alert("内容存储成功！");
+    }
+
+    function showFun(e) {
+        let key_ = $('key').value;
+        console.log("showFun key_ = ", key_);
+        let result = sessionStorage.getItem(key_);
+        console.log("get value result = ", result);
+        // for (let i = 0; i < sessionStorage.length; i++) {
+        //     let getValue = sessionStorage.getItem(sessionStorage.key(i));
+        //     console.log("提取存储的value = ", getValue);
+        // }
+    }
+
+    window.addEventListener('load', init, false);
+</script>
+
+</html>
