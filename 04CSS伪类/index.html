@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS伪选择器</title>
+
+    <style>
+        .linkElement {
+            font-size: 26px;
+            font-family: 'Courier New', Courier, monospace;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .linkElement:link {
+            color: rgb(0, 60, 255);
+        }
+
+        .linkElement:visited {
+            color: red;
+        }
+
+        .linkElement:hover {
+            color: green;
+        }
+
+        .linkElement:active {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- a标签的 -->
+    <a href="https://www.baidu.com" class="linkElement" target="_blank">console</a>
+</body>
+
+</html>
