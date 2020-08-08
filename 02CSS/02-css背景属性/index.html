@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>css背景属性</title>
+
+        <style>
+            .item {
+                margin: 15px;
+                height: 400px;
+                background-image: url(./image/background.jpg);
+                background-repeat: no-repeat;
+                background-position: center top;
+                background-size: cover;
+                box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.4);
+                border-radius: 15px;
+                position: relative;
+            }
+
+            #box {
+                margin: 15px;
+                padding: 35px;
+                background-color: #fff;
+                box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.4);
+                position: absolute;
+                border-radius: 15px;
+                clear: both;
+            }
+            .card {
+                width: 230px;
+                height: 350px;
+                background-color: #fff;
+                background-image: url(./image/头像.jpg);
+                background-position: center top;
+                background-size: cover;
+                border-radius: 10px;
+                float: left;
+                margin-right: 20px;
+                -webkit-transform: scale(1, 1);
+                -webkit-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                transform: scale(1, 1);
+                position: relative;
+            }
+
+            .card:hover {
+                -webkit-transform: scale(1.05, 1.05);
+                transform: scale(1.05, 1.05);
+            }
+
+            #box > div:last-child {
+                margin-right: 0;
+            }
+
+            .element {
+                width: 230px;
+                height: 350px;
+                background-image: url(./image/头像.jpg);
+                clear: both;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="conatiner">
+            <div class="item"></div>
+            <div id="box">
+                <div class="card"><a href=""></a></div>
+                <div class="card"><a href=""></a></div>
+                <div class="card"><a href=""></a></div>
+                <div class="card"><a href=""></a></div>
+                <div class="card"><a href=""></a></div>
+            </div>
+        </div>
+    </body>
+</html>

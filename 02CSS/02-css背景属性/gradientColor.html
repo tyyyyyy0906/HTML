@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>渐变色</title>
+
+        <style>
+            #colorItem {
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                background-image: linear-gradient(to right, orange, pink);
+                box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+                position: relative;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                float: left;
+            }
+
+            .liners {
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+                background-image: linear-gradient(90deg, orange, blue);
+                position: relative;
+                clear: both;
+                margin: 0 10px 10px 0;
+                float: left;
+            }
+
+            .liner_ {
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+                background-image: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 1));
+                position: relative;
+                margin: 0 10px 10px 0;
+                float: left;
+            }
+
+            .items {
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+                position: relative;
+                float: left;
+                margin: 0 10px 10px 0;
+                background-image: linear-gradient(
+                    to right,
+                    red 0%,
+                    pink 30%,
+                    red 60%,
+                    orange 80%,
+                    red 100%
+                );
+            }
+
+            .roundA {
+                width: 200px;
+                height: 200px;
+                border-radius: 100px;
+                background-image: radial-gradient(100px at center, pink 10%, red 100%);
+                position: relative;
+                clear: both;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3;
+            }
+
+            .roundA:hover {
+                -webkit-clip-path: polygon(
+                    50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%
+                );
+                clip-path: polygon(
+                    50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%
+                );
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="colorItem"></div>
+        <div id="colorItem"></div>
+        <div id="colorItem"></div>
+        <div class="liners"></div>
+        <div class="liner_"></div>
+        <div class="items"></div>
+
+        <div class="roundA"></div>
+    </body>
+</html>
